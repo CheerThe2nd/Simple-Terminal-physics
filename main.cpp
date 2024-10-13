@@ -3,6 +3,7 @@
 #include <thread>
 #include <chrono>
 #include <vector>
+#include <cmath>
 
 #define SCREEN_X 120
 #define SCREEN_Y 60
@@ -27,7 +28,8 @@ inline static void ClearTerminal()
     SetConsoleCursorPosition(hConsole, coordScreen);
 }
 #else
-void clear_console() {
+void ClearTerminal() 
+{
     std::cout << "\033c";  // Unix-like OS: send escape sequence to reset terminal
 }
 #endif
